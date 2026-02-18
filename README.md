@@ -169,6 +169,5 @@ entry_points:
 
 ## References
 
-- Ndagijimana S. et al., HISP Rwanda / MoH Rwanda (2025). *Climate & Health Spatial–Temporal Modelling in Rwanda.*
 - DHIS2 CHAP Platform: [dhis2-chap.github.io/chap-core](https://dhis2-chap.github.io/chap-core/)
 - Minimalist CHAP Python example: [dhis2-chap/minimalist_example_uv](https://github.com/dhis2-chap/minimalist_example_uv)
