@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# uv
+.uv/
+
+# Model outputs (keep input sample data, ignore generated outputs)
+output/*.pkl
+output/*.csv
+output/*.nc
+
+# OS
+.DS_Store
+Thumbs.db
