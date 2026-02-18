@@ -1,8 +1,6 @@
 # Malaria & Climate Modelling — Kigali Workshop (CHAP / uv edition)
 
-**Lead:** Dr. Similien Ndagijimana  
-**Affiliation:** HISP Rwanda · Ministry of Health Rwanda  
-**Original R model:** [hisprwanda/Malaria-and-Climate-Modelling-Kigali-Workshop](https://github.com/hisprwanda/Malaria-and-Climate-Modelling-Kigali-Workshop)
+
 
 ---
 
@@ -44,7 +42,6 @@ This model uses two named data sources that CHAP maps automatically:
 | `malaria_data` | `disease_cases`, `population`, `time_period`, `location` |
 | `climate_data` | `rainfall`, `mean_temperature`, `max_temperature`, `min_temperature`, `relative_humidity`, `ndvi`, `time_period`, `location` |
 
-> These replace the original R variable names `malaria_modelling_Oslo` → `malaria_data` and `U_5_diarrhea_climate` → `climate_data`.
 
 ## Running without CHAP (for development)
 
@@ -169,15 +166,6 @@ entry_points:
     command: "python predict.py {model} {historic_data} {future_data} {out_file}"
 ```
 
-## Background: the full Bayesian model
-
-The original R/INLA model (which this Python version approximates) fits:
-
-$$Y_{it} \sim \text{Poisson}(E_{it} \cdot \lambda_{it})$$
-
-$$\log(\lambda_{it}) = \alpha + u_i + \gamma_t + \delta_{it} + \boldsymbol{\beta}^\top \mathbf{X}_{it}$$
-
-where $u_i$ is a BYM2 spatial random effect, $\gamma_t$ a temporal RW1 effect, and $\mathbf{X}_{it}$ are the `climate_data` covariates. This Python version captures the fixed-effects component ($\boldsymbol{\beta}^\top \mathbf{X}_{it}$) using a Poisson GLM — sufficient for CHAP integration and easy to extend.
 
 ## References
 
